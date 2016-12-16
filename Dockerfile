@@ -1,5 +1,7 @@
 FROM phusion/passenger-ruby23
 
+MAINTAINER Amin Shah Gilani <amin@gilani.me>
+
 # Set correct environment variables.
 ENV HOME /root
 
