@@ -11,7 +11,10 @@ spec:
     spec:  # specification of the pod’s contents
       containers:
       - name: myapp
-        image: "amingilani/sample-containerized-rails:1.0"
+        image: "amingilani/sample-containerized-rails:1.1"
         env:
         - name: SECRET_KEY_BASE
-          value: wEtRhDYpRiC0eZrZd1Jp8KVlQwScdQecfe8A8gkPkBnvcEpsVvYq0SYnL87iK8TN
+          valueFrom:
+            secretKeyRef:
+              name: secret-key-base
+              key: secret.txt
