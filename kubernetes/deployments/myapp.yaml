@@ -11,8 +11,16 @@ spec:
     spec:  # specification of the pod’s contents
       containers:
       - name: myapp
-        image: "amingilani/sample-containerized-rails:1.1"
+        image: "amingilani/sample-containerized-rails:release-v1.2"
         env:
+        - name: RACK_ENV
+          value: production
+        - name: RAILS_ENV
+          value: production
+        - name: RAILS_LOG_TO_STDOUT
+          value: enabled
+        - name: RAILS_SERVE_STATIC_FILES
+          value: enabled
         - name: SECRET_KEY_BASE
           valueFrom:
             secretKeyRef:
